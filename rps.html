@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's play!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div
+      id="wrapper"
+      class="w-dvw h-dvh flex flex-col justify-start max-[700px]:px-5 items-center pt-10 gap-10 bg-black text-slate-50"
+    >
+      <h1 id="title" class="text-6xl font-semibold">Unveil your fate!</h1>
+      <!-- Buttons -->
+      <div id="buttons" class="flex gap-5">
+        <!-- Rock -->
+        <button
+          type="button"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
+          onclick="
+          {
+          startCountdown();
+          const rps = ['rock','paper','scissors'];
+          let comp = rps[Math.floor(Math.random() * rps.length)];
+          let result = '';
+          let emoji = '';
+          if(comp === 'rock'){
+            result = 'Tie.';
+            emoji = '✊';
+            tie+=1;  
+            document.getElementById('ties').innerHTML = `Ties: ${tie}`;
+          }
+          
+          else if(comp === 'scissors'){
+            result = 'You win.';
+            emoji = '✌️';
+            win+=1;
+            document.getElementById('wins').innerHTML = `Wins: ${win}`;
+          }
+          
+          else if (comp === 'paper'){
+            result = 'You lose.';
+            emoji = '🖐️';
+            loss+=1;
+            document.getElementById('losses').innerHTML = `Losses: ${loss}`;
+          }
+          document.getElementById('result').innerHTML = result;
+          document.getElementById('choice').innerHTML = `You ✊ ${emoji} Computer`;
+          }
+          "
+        >
+          ✊
+        </button>
+        <!-- Paper -->
+        <button
+          type="button"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
+          onclick="
+          {
+          startCountdown();
+          const rps = ['rock','paper','scissors'];
+          let comp = rps[Math.floor(Math.random() * rps.length)];
+          let result = '';
+          let emoji = '';
+          if(comp === 'rock'){
+            result = 'You win.';
+            emoji = '✊';
+            win+=1;
+            document.getElementById('wins').innerHTML = `Wins: ${win}`; 
+        }
+          
+          else if(comp === 'scissors'){
+            result = 'You lose.';
+            emoji = '✌️';
+            loss+=1;
+            document.getElementById('losses').innerHTML = `Losses: ${loss}`;
+        }
+          
+          else if (comp === 'paper'){
+            result = 'Tie.';
+            emoji = '🖐️';
+            tie+=1;
+            document.getElementById('ties').innerHTML = `Ties: ${tie}`; 
+          }
+          
+          document.getElementById('result').innerHTML = result;
+          document.getElementById('choice').innerHTML = `You 🖐️ ${emoji} Computer`;
+          }
+          "
+        >
+          🖐️
+        </button>
+        <!-- Scissors -->
+        <button
+          type="button"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
+          onclick="
+          {
+          startCountdown();
+          const rps = ['rock','paper','scissors'];
+          let comp = rps[Math.floor(Math.random() * rps.length)];
+          let result = '';
+          let emoji = '';
+          if(comp === 'rock'){
+            result = 'You lose.';
+            emoji = '✊';
+            loss+=1;
+            document.getElementById('losses').innerHTML = `Losses: ${loss}`;
+        }
+          
+          else if(comp === 'scissors'){
+            result = 'Tie.';
+            emoji = '✌️';
+            tie+=1;
+            document.getElementById('ties').innerHTML = `Ties: ${tie}`; 
+        }
+          
+          else if (comp === 'paper'){
+            result = 'You win';
+            emoji = '🖐️';
+            win+=1;
+            document.getElementById('wins').innerHTML = `Wins: ${win}`;
+          }
+          
+          document.getElementById('result').innerHTML = result;
+          document.getElementById('choice').innerHTML = `You ✌️ ${emoji} Computer`;
+          }
+          "
+        >
+          ✌️
+        </button>
+      </div>
+      <h1 id="result" class="text-5xl font-semibold hidden"></h1>
+      <h1 id="choice" class="text-3xl hidden"></h1>
+      <!-- Record -->
+      <div id="record" class="flex gap-2">
+        <h1 id="wins">Wins: 0</h1>
+        <h1 id="losses">Losses: 0</h1>
+        <h1 id="ties">Ties: 0</h1>
+      </div>
+      <!-- Reset Button -->
+      <button
+        id="reset"
+        type="button"
+        class="bg-slate-50 hover:bg-slate-200 text-black p-2 font-medium"
+        onclick="
+        document.getElementById('result').style.display = 'none';
+        document.getElementById('choice').style.display = 'none';
+        win = 0;
+        loss = 0;
+        tie = 0;
+        document.getElementById('wins').innerHTML = `Wins: ${win}`;
+        document.getElementById('losses').innerHTML = `Losses: ${loss}`;
+        document.getElementById('ties').innerHTML = `Ties: ${tie}`;
+        "
+      >
+        Reset Score
+      </button>
+      <div id="countdown" class="hidden text-9xl">3</div>
+    </div>
+    <script>
+      let win = 0;
+      let loss = 0;
+      let tie = 0;
+      let countdown = document.getElementById("countdown");
+      let countdownTime = 3;
+
+      // Function to update the countdown
+      function updateCountdown() {
+        countdown.innerHTML = countdownTime;
+      }
+
+      // Function to start the countdown
+      function startCountdown() {
+        document.getElementById("title").style.display = "none";
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("result").style.display = "none";
+        document.getElementById("choice").style.display = "none";
+        document.getElementById("record").style.display = "none";
+        document.getElementById("reset").style.display = "none";
+        countdown.style.display = "block";
+        // Update the countdown every second
+        let countdownInterval = setInterval(function () {
+          countdownTime--;
+
+          // Update the countdown display
+          updateCountdown();
+
+          // Check if the countdown has reached zero
+          if (countdownTime <= 0) {
+            clearInterval(countdownInterval); // Stop the countdown
+            document.getElementById("title").style.display = "block";
+            document.getElementById("buttons").style.display = "block";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("choice").style.display = "block";
+            document.getElementById("record").style.display = "block";
+            document.getElementById("reset").style.display = "block";
+            countdown.innerHTML = 3;
+            countdown.style.display = "none";
+            countdownTime = 3;
+          }
+        }, 1000); // Update every 1 second
+      }
+    </script>
+  </body>
+</html>

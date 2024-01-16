@@ -9,154 +9,39 @@
   <body>
     <!-- Wrapper -->
     <div
-      class="w-dvw h-dvh flex flex-col justify-start max-[700px]:px-5 items-center pt-10 gap-7 bg-gray-950 text-slate-50"
+      id="wrapper"
+      class="w-dvw h-dvh flex flex-col justify-center max-[700px]:justify-start max-[700px]:pt-5 items-center max-[700px]:items-start gap-7 max-[700px]:gap-5 bg-black text-slate-50 max-[700px]:px-2"
     >
-      <h1 class="text-6xl font-semibold">Rock Paper Scissors</h1>
-      <!-- Buttons -->
-      <div class="flex gap-5 max-w-full">
-        <!-- Rock -->
-        <button
-          type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
-          onclick="
-          {
-          const rps = ['rock','paper','scissors'];
-          let comp = rps[Math.floor(Math.random() * rps.length)];
-          let result = '';
-          let emoji = '';
-          if(comp === 'rock'){
-            result = 'Tie.';
-            emoji = '✊';
-            tie+=1;
-            document.getElementById('ties').innerHTML = `Ties: ${tie}`; 
-        }
-          
-          else if(comp === 'scissors'){
-            result = 'You win.';
-            emoji = '✌️';
-            win+=1;
-            document.getElementById('wins').innerHTML = `Wins: ${win}`; 
-        }
-          
-          else if (comp === 'paper'){
-            result = 'You lose.';
-            emoji = '🖐️';
-            loss+=1;
-            document.getElementById('losses').innerHTML = `Losses: ${loss}`; 
-          }
-          
-          document.getElementById('result').innerHTML = result;
-          document.getElementById('choice').innerHTML = `You ✊ ${emoji} Computer`;
-          }
-          "
+      <h1 class="text-9xl max-[700px]:text-8xl font-semibold max-w-full">
+        <span
+          class="bg-[url('https://i.pinimg.com/564x/86/33/d7/8633d7b74eecaeb25325d919de002ed1.jpg')] bg-cover bg-clip-text text-transparent"
+          >Rock</span
         >
-          ✊
-        </button>
-        <!-- Paper -->
-        <button
-          type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
-          onclick="
-          {
-          const rps = ['rock','paper','scissors'];
-          let comp = rps[Math.floor(Math.random() * rps.length)];
-          let result = '';
-          let emoji = '';
-          if(comp === 'rock'){
-            result = 'You win.';
-            emoji = '✊';
-            win+=1;
-            document.getElementById('wins').innerHTML = `Wins: ${win}`; 
-        }
-          
-          else if(comp === 'scissors'){
-            result = 'You lose.';
-            emoji = '✌️';
-            loss+=1;
-            document.getElementById('losses').innerHTML = `Losses: ${loss}`;
-        }
-          
-          else if (comp === 'paper'){
-            result = 'Tie.';
-            emoji = '🖐️';
-            tie+=1;
-            document.getElementById('ties').innerHTML = `Ties: ${tie}`; 
-          }
-          
-          document.getElementById('result').innerHTML = result;
-          document.getElementById('choice').innerHTML = `You 🖐️ ${emoji} Computer`;
-          }
-          "
+        <span
+          class="bg-[url('https://i.pinimg.com/564x/9d/0e/e1/9d0ee1c310942dd74aa8c1921b50ac7a.jpg')] bg-cover bg-clip-text text-transparent"
+          >Paper</span
         >
-          🖐️
-        </button>
-        <!-- Scissors -->
-        <button
-          type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
-          onclick="
-          {
-          const rps = ['rock','paper','scissors'];
-          let comp = rps[Math.floor(Math.random() * rps.length)];
-          let result = '';
-          let emoji = '';
-          if(comp === 'rock'){
-            result = 'You lose.';
-            emoji = '✊';
-            loss+=1;
-            document.getElementById('losses').innerHTML = `Losses: ${loss}`;
-        }
-          
-          else if(comp === 'scissors'){
-            result = 'Tie.';
-            emoji = '✌️';
-            tie+=1;
-            document.getElementById('ties').innerHTML = `Ties: ${tie}`; 
-        }
-          
-          else if (comp === 'paper'){
-            result = 'You win';
-            emoji = '🖐️';
-            win+=1;
-            document.getElementById('wins').innerHTML = `Wins: ${win}`;
-          }
-          
-          document.getElementById('result').innerHTML = result;
-          document.getElementById('choice').innerHTML = `You ✌️ ${emoji} Computer`;
-          }
-          "
+        <span
+          class="bg-[url('https://i.pinimg.com/736x/5e/aa/23/5eaa23f52321c5b5f988d466e86f30e7.jpg')] bg-cover bg-center bg-clip-text text-transparent"
+          >Scissors</span
         >
-          ✌️
-        </button>
-      </div>
-      <h1 id="result" class="text-5xl font-semibold"></h1>
-      <h1 id="choice" class="text-3xl"></h1>
-      <!-- Record -->
-      <div class="flex gap-2">
-        <h1 id="wins">Wins: 0</h1>
-        <h1 id="losses">Losses: 0</h1>
-        <h1 id="ties">Ties: 0</h1>
-      </div>
-      <!-- Reset Button -->
+      </h1>
+      <h3 class="text-xl max-[700px]:text-sm text-slate-100">
+        where chance meets choice in a clash of elements
+      </h3>
       <button
         type="button"
-        class="bg-slate-50 hover:bg-slate-200 text-black p-2 font-medium"
-        onclick="
-        win = 0;
-        loss = 0;
-        tie = 0;
-        document.getElementById('wins').innerHTML = `Wins: ${win}`;
-        document.getElementById('losses').innerHTML = `Losses: ${loss}`;
-        document.getElementById('ties').innerHTML = `Ties: ${tie}`;
-        "
+        class="text-lg max-[700px]:text-base bg-slate-50 hover:bg-slate-200 text-slate-950 rounded-full w-40 max-[700px]:w-32 p-3 max-[700px]:p-2"
+        onclick="redirect()"
+        ;
       >
-        Reset Score
+        START
       </button>
     </div>
     <script>
-      let win = 0;
-      let loss = 0;
-      let tie = 0;
+      function redirect() {
+        location.href = "rps.html";
+      }
     </script>
   </body>
 </html>
