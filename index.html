@@ -9,15 +9,15 @@
   <body>
     <!-- Wrapper -->
     <div
-      class="w-dvw h-dvh flex flex-col justify-start items-center pt-10 gap-7 bg-gray-950 text-slate-50"
+      class="w-dvw h-dvh flex flex-col justify-start max-[700px]:px-5 items-center pt-10 gap-7 bg-gray-950 text-slate-50"
     >
       <h1 class="text-6xl font-semibold">Rock Paper Scissors</h1>
       <!-- Buttons -->
-      <div class="flex gap-5">
+      <div class="flex gap-5 max-w-full">
         <!-- Rock -->
         <button
           type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 h-32 text-4xl"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
           onclick="
           {
           const rps = ['rock','paper','scissors'];
@@ -55,7 +55,7 @@
         <!-- Paper -->
         <button
           type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 h-32 text-4xl"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
           onclick="
           {
           const rps = ['rock','paper','scissors'];
@@ -93,7 +93,7 @@
         <!-- Scissors -->
         <button
           type="button"
-          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 h-32 text-4xl"
+          class="bg-transparent border-slate-50 border-4 rounded-full p-5 w-32 max-[700px]:w-20 max-[700px]:h-20 h-32 text-4xl max-[700px]:text-2xl text-center"
           onclick="
           {
           const rps = ['rock','paper','scissors'];
